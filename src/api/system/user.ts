@@ -1,5 +1,6 @@
 import { http } from '@/utils/http/axios';
 
+const prefix = '/admin';
 export interface BasicResponseModel<T = any> {
   code: number;
   msg: string;
@@ -28,7 +29,7 @@ export function getUserInfo() {
 export function login(params) {
   return http.request<BasicResponseModel>(
     {
-      url: '/login',
+      url: prefix + '/login',
       method: 'POST',
       params,
     },
@@ -41,7 +42,7 @@ export function login(params) {
 export function register(params) {
   return http.request<BasicResponseModel>(
     {
-      url: '/admin/register',
+      url: prefix + '/register',
       method: 'POST',
       params,
     },
